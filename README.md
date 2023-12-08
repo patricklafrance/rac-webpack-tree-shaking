@@ -80,4 +80,4 @@ You can't use the [webpack-bundle-analyzer](https://www.npmjs.com/package/webpac
 
 ## Notes
 
-Next time, use the sourcemap to identify what's end up in the bundle as suggested by [Devon](https://github.com/adobe/react-spectrum/discussions/5204#discussioncomment-7795915).
+Next time, use the sourcemaps to identify what's end up in the bundle as suggested by [Devon](https://github.com/adobe/react-spectrum/discussions/5204#discussioncomment-7795915).
