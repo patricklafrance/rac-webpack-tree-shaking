@@ -24,7 +24,7 @@ pnpm serve-build
 
 ## What's in this repository?
 
-The `index.jsx` file render a simple React application an header and a button from `react-aria-components`. As we only import a single `Button` component from `react-aria-components`, we expect that only RAC utils and `Button` component would be added to the production bundle.
+The `index.jsx` file render a simple React application with an header and a `Button` component from `react-aria-components`. As we only import a single `Button` component from `react-aria-components`, we expect that only RAC utils/shared code and the `Button` component would be added to the production bundle.
 
 ## Conclusion
 
