@@ -28,4 +28,52 @@ The `index.jsx` file render a simple React application with an header and a `But
 
 ## Conclusion
 
-We can see in the [dist/main.js](./dist/main.js) file that the whole `react-aria-components` has been added to the webpack production bundle.
+Tree-shaking does work but it requires to install the `TerserPlugin` and having the `optimization.usedExports: true` configuration.
+
+To test it, first only the `Button` component from `react-aria-components`:
+
+```jsx
+import { Button } from "react-aria-components";
+
+...
+
+<Button
+    onClick={() => {
+        alert("You clicked me!");
+    }}
+>
+    Click me
+</Button>
+```
+
+Then, open the [dist/main.js](./dist/main.js) file and search for "ListBox(". You should find no result.
+
+Then, also import the `Listbox` component from `react-aria-components`:
+
+```jsx
+import { Button, ListBox, ListBoxItem } from "react-aria-components";
+
+...
+
+<Button
+    onClick={() => {
+        alert("You clicked me!");
+    }}
+>
+    Click me
+</Button>
+<ListBox aria-label="Favorite animal" selectionMode="single">
+    <ListBoxItem>Aardvark</ListBoxItem>
+    <ListBoxItem>Cat</ListBoxItem>
+    <ListBoxItem>Dog</ListBoxItem>
+    <ListBoxItem>Kangaroo</ListBoxItem>
+    <ListBoxItem>Panda</ListBoxItem>
+    <ListBoxItem>Snake</ListBoxItem>
+</ListBox>
+```
+
+Open the [dist/main.js](./dist/main.js) file and search for "ListBox(" again. This time, you should find at least one result!
+
+## Webpack bundle analyzer
+
+You can't use the [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer) plugin to test this as it isn't able to consider tree shaking in the stats that it shows: https://github.com/webpack-contrib/webpack-bundle-analyzer/issues/161

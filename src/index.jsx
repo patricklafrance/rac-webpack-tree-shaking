@@ -1,5 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { Button, ListBox, ListBoxItem } from "react-aria-components";
 import { Button } from "react-aria-components";
 
 const root = createRoot(document.getElementById("root"));
@@ -16,6 +17,14 @@ root.render(
                 >
                     Click me
                 </Button>
+                <ListBox aria-label="Favorite animal" selectionMode="single">
+                    <ListBoxItem>Aardvark</ListBoxItem>
+                    <ListBoxItem>Cat</ListBoxItem>
+                    <ListBoxItem>Dog</ListBoxItem>
+                    <ListBoxItem>Kangaroo</ListBoxItem>
+                    <ListBoxItem>Panda</ListBoxItem>
+                    <ListBoxItem>Snake</ListBoxItem>
+                </ListBox>
             </div>
         </div>
     </StrictMode>

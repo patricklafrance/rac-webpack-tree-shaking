@@ -1,6 +1,7 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import { swcConfig } from "./swc.js";
 import path from "path";
+import TerserPlugin from "terser-webpack-plugin";
 
 export default {
     mode: "production",
@@ -33,22 +34,25 @@ export default {
         ],
     },
     optimization: {
-        minimize: false,
-        // chunkIds: "named",
-        // flagIncludedChunks: false,
-        // mangleExports: false,
-        // mangleWasmImports: false,
-        // moduleIds: "named",
+        minimize: true,
+        minimizer: [
+            new TerserPlugin({
+                terserOptions: {
+                    compress: {
+                        unused: true,
+                        dead_code: true,
+                        // Keeping these to be able to search for components in the outputed bundle.
+                        keep_classnames: true,
+                        keep_fargs: true,
+                        keep_fnames: true,
+                        keep_infinity: true,
+                    },
+                },
+            }),
+        ],
+        chunkIds: "named",
+        concatenateModules: false,
     },
-    // resolve: {
-    //     // So Webpack can map ".js" extension files in import to their original file.
-    //     // For more info, view https://github.com/webpack/webpack/issues/13252
-    //     extensionAlias: {
-    //         ".js": [".ts", ".tsx", ".js"],
-    //     },
-    //     // Must add ".js" for files imported from node_modules.
-    //     extensions: [".js", ".ts", ".tsx", ".css"],
-    // },
     plugins: [
         new HtmlWebpackPlugin({
             template: "./public/index.html",
