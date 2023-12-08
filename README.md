@@ -77,3 +77,7 @@ Open the [dist/main.js](./dist/main.js) file and search for "ListBox(" again. **
 ## Webpack bundle analyzer
 
 You can't use the [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer) plugin to test this as it isn't able to consider tree shaking in the stats that it shows: https://github.com/webpack-contrib/webpack-bundle-analyzer/issues/161
+
+## Notes
+
+Next time, use the sourcemap to identify what's end up in the bundle as suggested by [Devon](https://github.com/adobe/react-spectrum/discussions/5204#discussioncomment-7795915).
