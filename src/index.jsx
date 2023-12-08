@@ -1,7 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { Button, ListBox, ListBoxItem } from "react-aria-components";
-import { Button } from "react-aria-components";
 
 const root = createRoot(document.getElementById("root"));
 

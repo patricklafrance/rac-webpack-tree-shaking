@@ -46,7 +46,7 @@ import { Button } from "react-aria-components";
 </Button>
 ```
 
-Then, open the [dist/main.js](./dist/main.js) file and search for "ListBox(". **You should find no result.**
+Then, open the [dist/main.js](./dist/main.js) file and search for "listBox". **You should find no result.**
 
 Then, also import the `Listbox` component from `react-aria-components`:
 
@@ -72,7 +72,7 @@ import { Button, ListBox, ListBoxItem } from "react-aria-components";
 </ListBox>
 ```
 
-Open the [dist/main.js](./dist/main.js) file and search for "ListBox(" again. **This time, you should find at least one result!**
+Open the [dist/main.js](./dist/main.js) file and search for "listBox" again. **This time, you should find at least one result!**
 
 ## Webpack bundle analyzer
 

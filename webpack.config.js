@@ -50,8 +50,6 @@ export default {
                 },
             }),
         ],
-        chunkIds: "named",
-        concatenateModules: false,
     },
     plugins: [
         new HtmlWebpackPlugin({
