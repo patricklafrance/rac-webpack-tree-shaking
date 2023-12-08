@@ -30,7 +30,7 @@ The `index.jsx` file render a simple React application with an header and a `But
 
 Tree-shaking does work but it requires to install the `TerserPlugin` and having the `optimization.usedExports: true` configuration.
 
-To test it, first only the `Button` component from `react-aria-components`:
+To test it, first only import the `Button` component from `react-aria-components`:
 
 ```jsx
 import { Button } from "react-aria-components";
@@ -46,7 +46,7 @@ import { Button } from "react-aria-components";
 </Button>
 ```
 
-Then, open the [dist/main.js](./dist/main.js) file and search for "ListBox(". You should find no result.
+Then, open the [dist/main.js](./dist/main.js) file and search for "ListBox(". **You should find no result.**
 
 Then, also import the `Listbox` component from `react-aria-components`:
 
@@ -72,7 +72,7 @@ import { Button, ListBox, ListBoxItem } from "react-aria-components";
 </ListBox>
 ```
 
-Open the [dist/main.js](./dist/main.js) file and search for "ListBox(" again. This time, you should find at least one result!
+Open the [dist/main.js](./dist/main.js) file and search for "ListBox(" again. **This time, you should find at least one result!**
 
 ## Webpack bundle analyzer
 
