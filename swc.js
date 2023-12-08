@@ -3,16 +3,11 @@
 export const swcConfig = {
     jsc: {
         parser: {
-            syntax: "typescript",
-            tsx: true,
+            syntax: "ecmascript",
+            jsx: true,
         },
         // The output environment that the code will be compiled for.
         target: "es2022",
-        // View https://swc.rs/docs/configuration/minification for options.
-        minify: {
-            compress: true,
-            mangle: true,
-        },
         transform: {
             react: {
                 // Use "react/jsx-runtime".
@@ -28,17 +23,11 @@ export const swcConfig = {
         externalHelpers: true,
         // Informs the compiler where to find modules.
         baseUrl: ".",
-        // Same as TS paths to register aliases.
-        paths: {
-            "@root/*": ["src/*"],
-        },
     },
     module: {
         // The output module resolution system that the code will be compiled for.
         type: "es6",
         // Prevent SWC from exporting the `__esModule` property.
         strict: true,
-        // Preserve dynamic imports.
-        ignoreDynamic: true,
     },
 };

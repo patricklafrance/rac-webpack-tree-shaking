@@ -10,11 +10,11 @@ root.render(
             <h1>Testing React Aria Components tree-shaking with webpack</h1>
             <div>
                 <Button
-                    onClick={() => {
-                        alert("You clicked me!");
+                    onPress={() => {
+                        alert("You pressed me!");
                     }}
                 >
-                    Click me
+                    Press me
                 </Button>
                 <ListBox aria-label="Favorite animal" selectionMode="single">
                     <ListBoxItem>Aardvark</ListBoxItem>
