@@ -74,6 +74,10 @@ import { Button, ListBox, ListBoxItem } from "react-aria-components";
 
 Open the [dist/main.js](./dist/main.js) file and search for "listBox" again. **This time, you should find at least one result!**
 
+### Development mode
+
+There is one issue thought.. Since RAC is released as a single file and the [Terser](https://webpack.js.org/plugins/terser-webpack-plugin/) plugin isn't executed when in development, RAC doesn't really benefit from tree shaking when in development.
+
 ## Webpack bundle analyzer
 
 You can't use the [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer) plugin to test this as it isn't able to consider tree shaking in the stats that it shows: https://github.com/webpack-contrib/webpack-bundle-analyzer/issues/161

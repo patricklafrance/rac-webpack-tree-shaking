@@ -2,8 +2,8 @@
     "editor.minimap.enabled": false,
     "editor.wordWrap": "off",
     "editor.codeActionsOnSave": {
-        "source.fixAll": true,
-        "source.organizeImports": false
+        "source.fixAll": "explicit",
+        "source.organizeImports": "never"
     },
     "editor.formatOnSave": true,
     "[html]": {
@@ -14,7 +14,12 @@
     "javascript.preferences.useAliasesForRenames": false,
     "json.format.enable": false,
     "eslint.packageManager": "pnpm",
-    "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact"
+    ],
     "breadcrumbs.enabled": true,
     "search.exclude": {
         "**/node_modules*": true,
